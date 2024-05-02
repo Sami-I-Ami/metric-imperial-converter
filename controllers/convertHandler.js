@@ -12,7 +12,13 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    return input.match(regex)[2];
+    unit = input.match(regex)[2];
+    if (unit === "l" || unit === "L") {
+      unit = unit.toUpperCase();
+    } else {
+      unit = unit.toLowerCase();
+    }
+    return unit;
   };
   
   this.getReturnUnit = function(initUnit) {
