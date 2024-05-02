@@ -6,7 +6,7 @@ function ConvertHandler() {
     num = input.match(regex)[1];
     if (num.includes('/')){
       nums = num.split('/');
-      num = (nums[0] / nums[1]).toFixed(5);
+      num = (nums[0] / nums[1]).toPrecision(6);
     }
     return parseFloat(num);
   };
@@ -55,17 +55,17 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     switch (initUnit) {
       case 'gal':
-        return parseFloat((initNum * galToL).toFixed(5));
+        return parseFloat((initNum * galToL).toPrecision(6));
       case 'L':
-        return parseFloat((initNum / galToL).toFixed(5));
+        return parseFloat((initNum / galToL).toPrecision(6));
       case 'lbs':
-        return parseFloat((initNum * lbsToKg).toFixed(5));
+        return parseFloat((initNum * lbsToKg).toPrecision(6));
       case 'kg':
-        return parseFloat((initNum / lbsToKg).toFixed(5));
+        return parseFloat((initNum / lbsToKg).toPrecision(6));
       case 'mi':
-        return parseFloat((initNum * miToKm).toFixed(5));
+        return parseFloat((initNum * miToKm).toPrecision(6));
       case 'km':
-        return parseFloat((initNum / miToKm).toFixed(5));
+        return parseFloat((initNum / miToKm).toPrecision(6));
     }
   };
   
