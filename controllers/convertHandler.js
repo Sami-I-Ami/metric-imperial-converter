@@ -1,6 +1,6 @@
 function ConvertHandler() {
 
-  const regex = /(\d+)?(\w+)/;
+  const regex = /([\d.]+)?(\w+)/;
   
   this.getNum = function(input) {
     return input.match(regex)[1];
@@ -28,7 +28,7 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function(unit) {
-    switch (initUnit) {
+    switch (unit) {
       case 'gal':
         return 'gallons';
       case 'L':
@@ -50,22 +50,22 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     switch (initUnit) {
       case 'gal':
-        return initNum * galToL;
+        return (initNum * galToL).toFixed(5);
       case 'L':
-        return initNum / galToL;
+        return (initNum / galToL).toFixed(5);
       case 'lbs':
-        return initNum * lbsToKg;
+        return (initNum * lbsToKg).toFixed(5);
       case 'kg':
-        return initNum / lbsToKg;
+        return (initNum / lbsToKg).toFixed(5);
       case 'mi':
-        return initNum * miToKm;
+        return (initNum * miToKm).toFixed(5);
       case 'km':
-        return initNum / miToKm;
+        return (initNum / miToKm).toFixed(5);
     }
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
+    return `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum} ${this.spellOutUnit(returnUnit)}`;
   };
   
 }
