@@ -6,6 +6,9 @@ function ConvertHandler() {
     num = input.match(regex)[1];
     if (num.includes('/')){
       nums = num.split('/');
+      if (nums.length > 2) {
+        return 'invalid number';
+      }
       num = (nums[0] / nums[1]).toPrecision(6);
     }
     return parseFloat(num);
