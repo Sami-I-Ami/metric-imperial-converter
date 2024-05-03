@@ -67,17 +67,17 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     switch (initUnit) {
       case 'gal':
-        return parseFloat((initNum * galToL).toPrecision(6));
+        return parseFloat((initNum * galToL).toFixed(5));
       case 'L':
-        return parseFloat((initNum / galToL).toPrecision(6));
+        return parseFloat((initNum / galToL).toFixed(5));
       case 'lbs':
-        return parseFloat((initNum * lbsToKg).toPrecision(6));
+        return parseFloat((initNum * lbsToKg).toFixed(5));
       case 'kg':
-        return parseFloat((initNum / lbsToKg).toPrecision(6));
+        return parseFloat((initNum / lbsToKg).toFixed(5));
       case 'mi':
-        return parseFloat((initNum * miToKm).toPrecision(6));
+        return parseFloat((initNum * miToKm).toFixed(5));
       case 'km':
-        return parseFloat((initNum / miToKm).toPrecision(6));
+        return parseFloat((initNum / miToKm).toFixed(5));
     }
   };
   
