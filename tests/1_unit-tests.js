@@ -15,5 +15,6 @@ suite('Unit Tests', function(){
         assert.equal(convertHandler.getNum('mi'), 1, 'no number inputed');
 
         // unit
+        assert.equal(convertHandler.getUnit('notAUnit'), 'invalid unit', 'input not in list');
     })
 });

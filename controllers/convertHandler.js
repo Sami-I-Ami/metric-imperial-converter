@@ -18,13 +18,16 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    unit = input.match(regex)[2];
-    if (unit === "l" || unit === "L") {
-      unit = unit.toUpperCase();
+    acceptableUnits = ['gal', 'l', 'lbs', 'kg', 'mi', 'km'];
+    unit = input.match(regex)[2].toLowerCase();
+    if (acceptableUnits.includes(unit)){
+      if (unit === "l") {
+        unit = unit.toUpperCase();
+      }
+      return unit;
     } else {
-      unit = unit.toLowerCase();
+      return 'invalid unit';
     }
-    return unit;
   };
   
   this.getReturnUnit = function(initUnit) {
