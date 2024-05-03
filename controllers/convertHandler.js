@@ -1,9 +1,12 @@
 function ConvertHandler() {
 
-  const regex = /([\d./]+)?(\w+)/;
+  const regex = /([\d.\/]+)?(\w+)/;
   
   this.getNum = function(input) {
     num = input.match(regex)[1];
+    if (num == undefined) {
+      num = '1';
+    }
     if (num.includes('/')){
       nums = num.split('/');
       if (nums.length > 2) {
