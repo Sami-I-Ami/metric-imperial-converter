@@ -15,6 +15,12 @@ suite('Unit Tests', function(){
         assert.equal(convertHandler.getNum('mi'), 1, 'no number inputed');
 
         // unit
+        assert.equal(convertHandler.getUnit('3gal'), 'gal' , 'inputs');
+        assert.equal(convertHandler.getUnit('3L'), 'L' , 'inputs');
+        assert.equal(convertHandler.getUnit('3lbs'), 'lbs' , 'inputs');
+        assert.equal(convertHandler.getUnit('3kg'), 'kg' , 'inputs');
+        assert.equal(convertHandler.getUnit('3mi'), 'mi' , 'inputs');
+        assert.equal(convertHandler.getUnit('3km'), 'km' , 'inputs');
         assert.equal(convertHandler.getUnit('notAUnit'), 'invalid unit', 'input not in list');
     })
 });
