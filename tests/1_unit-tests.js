@@ -52,5 +52,23 @@ suite('Unit Tests', function(){
         assert.equal(convertHandler.spellOutUnit('kg'), 'kilograms', 'return spelled out string');
         assert.equal(convertHandler.spellOutUnit('mi'), 'miles', 'return spelled out string');
         assert.equal(convertHandler.spellOutUnit('km'), 'kilometers', 'return spelled out string');
-    }); 
+    });
+    test('gal to L', () => {
+        assert.equal(convertHandler.convert(1, 'gal'), 3.78541, 'convert');
+    });
+    test('L to gal', () => {
+        assert.equal(convertHandler.convert(1, 'L'), 0.26417, 'convert');
+    });
+    test('lbs to kg', () => {
+        assert.equal(convertHandler.convert(1, 'lbs'), 0.45359, 'convert');
+    });
+    test('kg to lbs', () => {
+        assert.equal(convertHandler.convert(1, 'kg'), 2.20462, 'convert');
+    });
+    test('mi to km', () => {
+        assert.equal(convertHandler.convert(1, 'mi'), 1.60934, 'convert');
+    });
+    test('km to mi', () => {
+        assert.equal(convertHandler.convert(1, 'km'), 0.62137, 'convert');
+    });
 });
