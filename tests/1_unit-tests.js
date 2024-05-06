@@ -38,12 +38,19 @@ suite('Unit Tests', function(){
         assert.equal(convertHandler.getUnit('notAUnit'), 'invalid unit', 'input not in list');
     });
     test('Return units', () => {
-        assert.equal(convertHandler.getReturnUnit('3gal'), 'L' , 'return unit');
-        assert.equal(convertHandler.getReturnUnit('3L'), 'gal' , 'return unit');
-        assert.equal(convertHandler.getReturnUnit('3lbs'), 'kg' , 'return unit');
-        assert.equal(convertHandler.getReturnUnit('3kg'), 'lbs' , 'return unit');
-        assert.equal(convertHandler.getReturnUnit('3mi'), 'km' , 'return unit');
-        assert.equal(convertHandler.getReturnUnit('3km'), 'mi' , 'return unit');
+        assert.equal(convertHandler.getReturnUnit('gal'), 'L' , 'return unit');
+        assert.equal(convertHandler.getReturnUnit('L'), 'gal' , 'return unit');
+        assert.equal(convertHandler.getReturnUnit('lbs'), 'kg' , 'return unit');
+        assert.equal(convertHandler.getReturnUnit('kg'), 'lbs' , 'return unit');
+        assert.equal(convertHandler.getReturnUnit('mi'), 'km' , 'return unit');
+        assert.equal(convertHandler.getReturnUnit('km'), 'mi' , 'return unit');
     });
-        
+    test('Return spelled-out string', () => {
+        assert.equal(convertHandler.spellOutUnit('gal'), 'gallons', 'return spelled out string');
+        assert.equal(convertHandler.spellOutUnit('L'), 'liters', 'return spelled out string');
+        assert.equal(convertHandler.spellOutUnit('lbs'), 'pounds', 'return spelled out string');
+        assert.equal(convertHandler.spellOutUnit('kg'), 'kilograms', 'return spelled out string');
+        assert.equal(convertHandler.spellOutUnit('mi'), 'miles', 'return spelled out string');
+        assert.equal(convertHandler.spellOutUnit('km'), 'kilometers', 'return spelled out string');
+    }); 
 });
